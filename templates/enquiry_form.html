@@ -1,171 +1,155 @@
 {% extends 'base.html' %}
 {% load static %}
 {% block content %}
-
 <style>
-    body {
+  body {
         background-color: #14101d;
         background-image: radial-gradient( circle, rgba(  0, 0, 0, 0 ) 0%, rgba( 0, 0, 0, 0.8 ) 100% );
         background-position: center center;
         background-repeat: no-repeat;
         background-attachment: fixed;
         background-size: cover;
-     }
-</style>
-<!--==================== PRODUCT AND SERVICE SECTION ====================-->
-
-<section class="product__service_section section">
-    <div class="product__service_container container ">
-        <div class="product__service__content" data-aos="zoom-in" data-aos-duration="3000" >
-           
-                <h2 > Transform Your Online Presence with our Comprehensive Solutions </h2>
-                <p >
-                    Discover our range of services designed to enhance every aspect of your online presence. From
-                    captivating website templates to result-driven digital marketing strategies and expert web development
-                    solutions, <br>we have the tools to take your business to new heights. Explore our services below and unlock
-                    the potential for success in the digital landscape.
-                    
-                </p>  
-        </div>
-        
-    </div>
-    <style>
-      .service_imgBox
-      {
-        
-        width: 500px;
-        height: 400px;
-      }
-      .service_imgBox img
-      {
+  }
+  .enquiry_section{
+    width: 100%;
+    margin: calc(var(--header-height) + 2rem) auto 2rem;
+    justify-content: center;
+  }
+  .enq-form-section{
+    width: 65%;
+    background: #414141b5;
+    padding: 3.3rem 2.8rem;
+  }
+  .enq-head{
+    justify-content: space-between;
+  }
+  .enq-head h4{
+    /* margin: 0.3rem 0; */
+    padding-bottom: 0.3rem;
+    width: 120px;
+    color: #189aa6;
+    border-bottom: 3px solid #c9c9c947;
+    font-size: 1.3em;
+    font-weight: 600;
+  }
+  .form-close{
+    font-size: 1.3rem;
+  }
+  .enquiry-form{
+    width: 100%;
+    margin: auto;
+    padding: 1rem 1rem;
+  }
+  .enquiry-form input,
+      select {
         width: 100%;
-        height: 100%;
-        object-fit: fill;
+        padding: 10px;
+        box-sizing: border-box;
+        background: none;
+        outline: none;
+        resize: none;
+        border: 0;
+        font-family: "Montserrat", sans-serif;
+        transition: all 0.3s;
+        border-bottom: 2px solid #bebed2;
+        color: #f7f9f9;
       }
-      .kp-button{
-        background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgb(64 73 151) 0%, rgba(24,181,210,1) 25%, rgb(83 238 232 / 79%) 66%, rgb(27 210 221 / 71%) 92%);
-        font-size: 1.1rem;
-        border-radius: 5px;
-        margin: 1.25rem 0;
+      .enquiry-form input:focus,
+      option:focus {
+        border-bottom: 2px solid #78788c;
       }
-      @media (max-width:732px)
-      {
-        .service_imgBox
-      {
+
+      .enquiry-form p:before {
+        content: attr(type);
+        display: block;
+        margin: 28px 0 0;
+        font-size: 1em;
+        color: #f9f6f6;
+      }
+      .enquiry-form .btn-send {
+        padding: 0.9rem 0.7rem;
+        margin: 1.5rem 0.2rem;
+        font-size: 1rem;
+        font-family: "Montserrat", sans-serif;
+        background: #5959599e;
+        border-radius: 4px;
+        color: #fbfbff;
+        border: none;
+        cursor: pointer;
+        transition: all 0.3s;
+      }
+      .enquiry-form .btn-send:hover {
+        transform: scale(1.1);
+      }
+</style>
+
+ <!--==================== Enquiry form ====================-->
+
+ <section class="enquiry_section section flex" >
+    <div class="enq-form-section">
+      <div class="enq-head flex">
+        <h4 class="flex" style="align-items: center;">
+          <i class="ri-send-plane-fill" style="margin-right: 5px;"></i>
+          Send Us
+        </h4>
         
-        width: 280px;
-        height: 275px;
-      }
-      .product__service__Box:nth-child(odd)
-      {
-        display: flex;
-        flex-direction: column-reverse;
-        gap: 1rem;
-      }
-      }
-    </style>
- 
-
-    <div class="product__service__Box grid">
-        <div class="ps__box" data-aos="fade-up"
-        data-aos-duration="3000">
-               
-            <div class="ps__content">
-                <h4>Web Development</h4>
-                <p>
-                    Unlock the full potential of your website with our top-notch web development services. Whether you
-                    need a simple and intuitive website or a complex e-commerce platform, our experienced developers will
-                    bring your vision to life. We leverage the latest technologies and industry best practices to ensure
-                    seamless functionality, responsive design, and optimal performance. Elevate your online presence and
-                    provide your visitors with a superior browsing experience with our expert web development solutions.
-                </p>
-                <a href="{% url 'serviceEnquiry' %}"><button class="buttons kp-button">Know Pricing</button></a>
-            </div>
-        </div>
-        <div class="service_imgBox" data-aos="fade-up"
-        data-aos-duration="3000">
-          <img src="{% static 'img/serv_img3.png' %}" alt="Web Development">
-        </div>
-    </div>
-    <div class="product__service__Box grid" >
-   
-      <div class="service_imgBox">
-        <img src="{% static 'img/serv_img2.png' %}" alt="Digital Marketing" data-aos="fade-up"
-        data-aos-duration="3000">
+        <a href="/Products" class="form-close"><i class="ri-close-line" style="color: #fff;"></i></a>
       </div>
-        <div class="ps__box" data-aos="fade-up"
-        data-aos-duration="3000">
-            <div class="ps__content" >
-                <h4>Digital Marketing</h4>
-                <p>
-                    Boost your online visibility and drive targeted traffic to your website with our comprehensive digital
-                    marketing services. Our expert team will develop tailored strategies to increase your brand's reach,
-                    engage your audience, and maximize conversions. From search engine optimization (SEO) and social
-                    media marketing to content creation and pay-per-click (PPC) advertising, we have you covered. Take your
-                    digital marketing efforts to new heights and achieve your business goals with our proven strategies.
-                    
-                </p>
-                <a href="{% url 'serviceEnquiry' %}"><button class="buttons kp-button">Know Pricing</button></a>
-
-            </div>
-        </div>
-    </div>
-    <div class="product__service__Box grid">
-   
-        <div class="ps__box" data-aos="fade-up"
-        data-aos-duration="3000">
-           
-            <div class="ps__content">
-                <h4>Templates Selling</h4>
-                <p>
-                    Choose from our wide selection of professionally crafted website templates, designed to captivate your
-                    audience and showcase your brand. Each template is fully customizable and responsive, ensuring a
-                    seamless user experience across all devices. Take your website to the next level with our templates that
-                    are optimized for conversion and equipped with the latest design trends. Explore our collection and find
-                    the perfect template to elevate your online presence.
-                </p>
-                <a href="/Pricing"><button class="buttons kp-button">Know Pricing</button></a>
-            </div>
-        </div>
-        <div class="service_imgBox" data-aos="fade-up"
-        data-aos-duration="3000">
-          <img src="{% static 'img/serv_img1.png' %}" alt="Templates Selling" >
-        </div>
-    </div>
-
-</section>
-
-
-<!--===================== PRODUCT SERVICE CONTENT SECTION ==========================-->
-<!-- <section class="PScontent__section section" >
-    <div class="PScontent__container container ">
-       
-        <div class="pscontent__box flex">
-            <div class="psimgBox">
-             
-            </div>
-            <div class="pscontent">
-                <div class="PScontent__top ">
-                    <h1>More About Product And Service  !</h1>
-                </div>
-                <p>
-                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
-                    Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, 
-                    when an unknown printer took a galley of type and scrambled it to make a type 
-                    specimen book. It has survived not only five centuries, but also the leap 
-                    into electronic typesetting, remaining essentially unchanged. It was popularised 
-                    in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, 
-                    and more recently with desktop publishing software like Aldus PageMaker including 
-                    versions of Lorem Ipsum.
-                </p>
-            </div>
-
-        </div>
+      <div class="enq-body flex">
+          <form
+            class="form enquiry-form"
+            method="post"
+            action="{% url 'saveEnquiry' %}"
+            enctype="multipart/form-data"
+          >
+            {% csrf_token %}
+            <p type="Name:">
+              <input
+                placeholder="Write your name here.."
+                name="Name"
+                required
+              />
+            </p>
+            <p type="Email:">
+              <input
+                type="email"
+                placeholder="Let us know how to contact you back.."
+                name="Email"
+                required
+              />
+            </p>
+            <p type="Phone:">
+              <input
+                placeholder="Let us know your number"
+                pattern="[1-9]{1}[0-9]{9}"
+                name="Phone"
+                required
+              />
+            </p>
+            <p type="Company:">
+              <input
+                placeholder="Let us know your Company.."
+                name="Company"
+              />
+            </p>
+            <p type="Message:">
+              <input
+                placeholder="What type of service/template are you looking for?"
+                name="message"
+              />
+            </p>
+            <button type="submit" class="btn-send">Send Message</button>
+            <!-- <div>
+            <span class="fa fa-phone"></span>001 1023 567
+            <span class="fa fa-envelope-o"></span> contact@company.com
+          </div> -->
+          </form>
+      </div>
     </div>
 
-</section> -->
+ </section>
 
-<script>
+ <script>
     // ABOUT PAGE ANIMATION 
     (function(name, factory) {
         if (typeof window === 'object') {
@@ -610,4 +594,6 @@
 
 </script>
 
-{% endblock %}
+
+
+ {% endblock %}

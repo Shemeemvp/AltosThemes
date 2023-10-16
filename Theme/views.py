@@ -253,6 +253,29 @@ def upload_zip(request):
         return render(request,'file_upload.html',context)
     return redirect('FileUpload')  
 
+
+def serviceEnquiry(request):
+    return render(request, 'enquiry_form.html')
+
+def saveEnquiry(request):
+    if request.method == 'POST':
+        try:
+            uName=request.POST['Name']
+            uEmail=request.POST['Email']
+            uPhone=request.POST['Phone']
+            uCompany = request.POST['Company']
+            uMessage=request.POST['message']
+
+            enq=Enquiries(name=uName,email=uEmail,phone=uPhone,message=uMessage,company = uCompany)
+            enq.save()
+            messages.success(request,"We will reach out to you soon..")
+            return redirect('ProductPage')
+        except Exception as e:
+            print(e)
+            messages.error(request, 'Something went wrong, Please try again.')
+            return redirect('ProductPage')
+    else:
+        return redirect('ProductPage')
 #================= User Section End ===============================
 
 

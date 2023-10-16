@@ -19,6 +19,8 @@ urlpatterns = [
     path('Contact_Us',views.connect_us,name='connect_us'),
     path('File-Upload-Admin',views.FileUpload_admin,name='FileUpload_admin'),
     path('Upload-zip',views.upload_zip,name='upload_zip'),
+    path('Service-enquiry',views.serviceEnquiry, name='serviceEnquiry'),
+    path('Save-enquiry',views.saveEnquiry, name='saveEnquiry'),
 
 
     # ================ Admin section ===========
