@@ -78,6 +78,8 @@ class Connect(models.Model):
     connect_time=models.TimeField(auto_now_add=True,blank=False,null=True)
     status=models.CharField(max_length=255,null=True,blank=True,default=0)
 
+
+# Enquiry form ==  Added - Shemeem
 class Enquiries(models.Model):
     name = models.CharField(max_length=255)
     enq_date=models.DateField(auto_now_add=True,null=True,auto_now=False)

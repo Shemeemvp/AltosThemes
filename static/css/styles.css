@@ -1694,6 +1694,43 @@ grid-template-columns: repeat(1,1fr);
     background: #ffffff;
     
     }
+    .template-price{
+      font-size: 1.3rem;
+      font-weight: 500;
+      color: white;
+    }
+    .footer-buttons{
+      grid-template-columns: 1fr 2.5fr;
+      gap: 1rem;
+      padding: 0.5rem 0.2rem;
+    }
+    .tmp-cart-button{
+      padding: 0.55rem 0.4rem;
+      font-size: 1.4rem;
+      color: white;
+      border: 1px solid white;
+      border-radius: 2px;
+      background: #aeb1c524;
+      cursor: pointer;
+    }
+    .tmp-lp-button{
+      padding: 0.55rem 0.4rem;
+      font-size: 1.2rem;
+      color: darkgoldenrod;
+      border: 1px solid darkgoldenrod;
+      border-radius: 2px;
+      background: #ffffff;
+      cursor: pointer;
+    }
+    .tmp-lp-button:hover, .tmp-cart-button:hover{
+      transform: scale(1.03);
+    }
+    .tmp-lp-button:hover {
+      color: white;
+      border: 1px solid whitesmoke;
+      background: darkgoldenrod;
+    }
+    
     @media (max-width:575px)
     {
       .templateslist__Box
@@ -1783,7 +1820,7 @@ grid-template-columns: repeat(1,1fr);
   /* background-image:  url('../img/product_page_bg3.jpg'); 
   background-position:100%;
   background-size: cover; */
-  padding: 8rem 1rem;
+  padding: 8rem 1rem 1rem;
 
 }
 .product__service_container
@@ -2814,7 +2851,7 @@ letter-spacing: 0.06rem;
 }
 .address_item p{
   color: #f1f0f0;
-  font-size: 0.94rem;
+  font-size: 0.84rem;
 }
 
 
@@ -2878,8 +2915,12 @@ letter-spacing: 0.06rem;
 .templateView__container
 {
     grid-template-columns: 2.5fr 1fr;
-    gap:1rem;
+    gap: 2.5rem;
     justify-content: center;
+}
+.rightBox{
+  padding: 3.5rem 1.3rem;
+  border: 1px solid #d3d3d34a;
 }
 .contentBox
 {
@@ -2945,7 +2986,12 @@ letter-spacing: 0.06rem;
     object-fit: cover;
     border: none
 }
-
+@media (max-width:768px) {
+  .templateView__container
+    {
+        grid-template-columns:repeat(1,1fr);
+    }
+}
 @media (max-width:575px)
 {
     .templateView_section
@@ -2955,6 +3001,9 @@ letter-spacing: 0.06rem;
     .templateView__container
     {
         grid-template-columns:repeat(1,1fr);
+    }
+    .rightBox{
+      padding: 2rem 1rem;
     }
     .contentBox
     {

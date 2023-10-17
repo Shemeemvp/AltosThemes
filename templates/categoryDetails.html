@@ -118,7 +118,18 @@ body {
     letter-spacing: 0.05rem;
     margin-bottom: 1.75rem;
  }
-
+ .kp-button{
+    background: linear-gradient(22deg, rgba(2,0,36,1) 0%, rgb(251 185 19 / 77%) 0%, rgb(251 185 19 / 83%) 25%, rgb(105 185 182 / 86%) 66%, rgb(0 241 255 / 71%) 92%);
+    font-size: 1rem;
+    border-radius: 5px;
+    margin: 1.25rem 0;
+    /* transition: 1s linear; */
+    opacity: 0.85;
+  }
+  .kp-button:hover{
+    opacity: 1;
+    
+  }
 
  /* Category section media devices */
 
@@ -321,6 +332,7 @@ body {
                 </p>
                 {% endfor %}
             </div>
+            <a href="{% url 'serviceEnquiry' %}"><button class="buttons kp-button">Know Plan & Pricing</button></a>
         </div>
 
     </div>
@@ -339,16 +351,25 @@ body {
             </P> -->
             <div class="templateslist__Box" id="sub-images-container">
               {% for temp in templates %}
-              <a href="{% url 'TemplateView' temp.id %}" class="temp__card sub-image-card">
+              <div class="template">
+                <div class="tmp-body">
+                  <a href="{% url 'TemplateView' temp.id %}" class="temp__card sub-image-card">
                 
-                  {% if temp.template_image %}
-                  <img src="{{temp.template_image.url}}" alt="{{temp.template_img_alttag}}">
-                  {% endif %}
-                  {% if temp.template_code %}
-                  <p style="color: aliceblue; margin-bottom:0.40rem;"> Code : {{temp.template_code}}</p>
-                  {% endif %}
-      
-              </a>
+                      {% if temp.template_image %}
+                      <img src="{{temp.template_image.url}}" alt="{{temp.template_img_alttag}}">
+                      {% endif %}
+                      {% if temp.template_code %}
+                      <p style="color: aliceblue; margin-bottom:0.40rem;"> Code : {{temp.template_code}}</p>
+                      {% endif %}
+                  </a>
+                </div>
+                <div class="tmp-price"><span><i class='bx bx-rupee'></i><strike>5999</strike></span><span class="template-price"><i class='bx bx-rupee price-icon'></i>{{temp.template_price}}</span></div>
+                <p>Last Updated: {{temp.template_publish_date}}</p>
+                <div class="footer-buttons grid">
+                  <button class="tmp-cart-button"><i class='bx bx-cart' ></i></button>
+                  <button class="tmp-lp-button" onclick="window.location.href=`{% url 'TemplateView' temp.id %}`">Live Preview</button>
+                </div>
+              </div>
               {% endfor %}
             </div>
       
