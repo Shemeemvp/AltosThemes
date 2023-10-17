@@ -3,14 +3,54 @@
 {% block content %}
 
 <style>
-    body {
-        background-color: #14101d;
-        background-image: radial-gradient( circle, rgba(  0, 0, 0, 0 ) 0%, rgba( 0, 0, 0, 0.8 ) 100% );
-        background-position: center center;
-        background-repeat: no-repeat;
-        background-attachment: fixed;
-        background-size: cover;
-     }
+  body {
+      background-color: #14101d;
+      background-image: radial-gradient( circle, rgba(  0, 0, 0, 0 ) 0%, rgba( 0, 0, 0, 0.8 ) 100% );
+      background-position: center center;
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      background-size: cover;
+  }
+  .service_imgBox
+  {
+    
+    width: 500px;
+    height: 400px;
+  }
+  .service_imgBox img
+  {
+    width: 100%;
+    height: 100%;
+    object-fit: fill;
+  }
+  .kp-button{
+    background: linear-gradient(42deg, rgba(2,0,36,1) 0%, rgb(83 93 177) 0%, rgb(83 107 174) 25%, rgb(60 161 167) 66%, rgb(58 165 166) 92%);
+    font-size: 1.1rem;
+    border-radius: 5px;
+    margin: 1.25rem 0;
+  }
+  .kp-button:hover{
+    background: #3ba4a6;
+  }
+  #pricing_section_service{
+    padding: 0 0 5rem;
+    background-image: none;
+  }
+  @media (max-width:732px)
+  {
+    .service_imgBox
+  {
+    
+    width: 280px;
+    height: 275px;
+  }
+  .product__service__Box:nth-child(odd)
+  {
+    display: flex;
+    flex-direction: column-reverse;
+    gap: 1rem;
+  }
+  }
 </style>
 <!--==================== PRODUCT AND SERVICE SECTION ====================-->
 
@@ -29,42 +69,6 @@
         </div>
         
     </div>
-    <style>
-      .service_imgBox
-      {
-        
-        width: 500px;
-        height: 400px;
-      }
-      .service_imgBox img
-      {
-        width: 100%;
-        height: 100%;
-        object-fit: fill;
-      }
-      .kp-button{
-        background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgb(64 73 151) 0%, rgba(24,181,210,1) 25%, rgb(83 238 232 / 79%) 66%, rgb(27 210 221 / 71%) 92%);
-        font-size: 1.1rem;
-        border-radius: 5px;
-        margin: 1.25rem 0;
-      }
-      @media (max-width:732px)
-      {
-        .service_imgBox
-      {
-        
-        width: 280px;
-        height: 275px;
-      }
-      .product__service__Box:nth-child(odd)
-      {
-        display: flex;
-        flex-direction: column-reverse;
-        gap: 1rem;
-      }
-      }
-    </style>
- 
 
     <div class="product__service__Box grid">
         <div class="ps__box" data-aos="fade-up"
@@ -79,7 +83,8 @@
                     seamless functionality, responsive design, and optimal performance. Elevate your online presence and
                     provide your visitors with a superior browsing experience with our expert web development solutions.
                 </p>
-                <a href="{% url 'serviceEnquiry' %}"><button class="buttons kp-button">Know Pricing</button></a>
+                <!-- <a href="{% url 'serviceEnquiry' %}"><button class="buttons kp-button">Know Pricing</button></a> -->
+                <a href="https://altostechnologies.in/" target="_blank"><button class="buttons kp-button">Learn More</button></a>
             </div>
         </div>
         <div class="service_imgBox" data-aos="fade-up"
@@ -105,7 +110,8 @@
                     digital marketing efforts to new heights and achieve your business goals with our proven strategies.
                     
                 </p>
-                <a href="{% url 'serviceEnquiry' %}"><button class="buttons kp-button">Know Pricing</button></a>
+                <!-- <a href="{% url 'serviceEnquiry' %}"><button class="buttons kp-button">Know Pricing</button></a> -->
+                <a href="https://altostechnologies.in/" target="_blank"><button class="buttons kp-button">Learn More</button></a>
 
             </div>
         </div>
@@ -133,6 +139,106 @@
         </div>
     </div>
 
+</section>
+
+<section class="pricing_section section" id="pricing_section_service">
+  <div class="pricing__container container">
+
+      <div class="pricing__top ">
+          <!-- <h2>Our Plan and Pricing</h1> -->
+          <p>
+              Find the perfect pricing plan for our premium website themes. Explore our selection of affordable
+              packages designed to enhance your online presence. Choose from a range of feature-rich options
+              tailored to suit your business needs 
+          </p>
+      </div>
+     
+      <div class="pricing__box">
+          <div class="pricing__item">
+              <div class="card__pricing">
+                  
+                  <div class="card__body">
+                      <h3>BASIC</h3>
+                      <h1>$200</h1>
+                      <P>Lorem Ipsum is simply dummy </P>
+                      <ul>
+                          <li>
+                              <i class="ri-check-line"></i>
+                              <span>Lorem Ipsum has been the industry's standard dummy</span>
+                          </li>
+                          <li>
+                              <i class="ri-check-line"></i>
+                              <span>Lorem Ipsum has been the industry's standard dummy</span>
+                          </li>
+                          <li>
+                              <i class="ri-close-line"></i>
+                              <span>Lorem Ipsum has been the industry's standard dummy</span>
+                          </li>
+                      </ul>
+                      <div class="pricingButton">
+                          <a href="#"><button>JOIN NOW </button></a>
+                      </div>
+                  </div>
+              </div>
+          </div>
+          <div class="pricing__item">
+              <div class="card__pricing">
+                  
+                  <div class="card__body">
+                    <h3 style="color: #0000b1a3;">STANDARD</h3>
+                      <h1>$200</h1>
+                      <P>Lorem Ipsum is simply dummy </P>
+                      <ul>
+                          <li>
+                              <i class="ri-check-line"></i>
+                              <span>Lorem Ipsum has been the industry's standard dummy</span>
+                          </li>
+                          <li>
+                              <i class="ri-close-line"></i>
+                              <span>Lorem Ipsum has been the industry's standard dummy</span>
+                          </li>
+                          <li>
+                              <i class="ri-check-line"></i>
+                              <span>Lorem Ipsum has been the industry's standard dummy</span>
+                          </li>
+                      </ul>
+                      <div class="pricingButton">
+                          <a href="#"><button>JOIN NOW </button></a>
+                      </div>
+                  </div>
+              </div>
+          </div> 
+
+          <div class="pricing__item">
+              <div class="card__pricing">
+                 
+                  <div class="card__body">
+                    <h3 style="color: #d9b700cf;">PREMIUM</h3>
+                      <h1>$200</h1>
+                      <P>Lorem Ipsum is simply dummy </P>
+                      <ul>
+                          <li>
+                              <i class="ri-check-line"></i>
+                              <span>Lorem Ipsum has been the industry's standard dummy</span>
+                          </li>
+                          <li>
+                              <i class="ri-check-line"></i>
+                              <span>Lorem Ipsum has been the industry's standard dummy</span>
+                          </li>
+                          <li>
+                              <i class="ri-check-line"></i>
+                              <span>Lorem Ipsum has been the industry's standard dummy</span>
+                          </li>
+                      </ul>
+                      <div class="pricingButton">
+                          <a href="#"><button> JOIN NOW </button></a>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+
+  </div>
 </section>
 
 
