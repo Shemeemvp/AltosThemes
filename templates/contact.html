@@ -36,10 +36,23 @@
       color: #fff;
       font-size: 2.5rem;
      }
-     @media screen and (max-width: 768px) {
+     .first-location-section .contact__addressBox::after{
+      content: '';
+      display: inline-block;
+      width: 1px;
+      position: absolute;
+      height: 90%;
+      right: -0.5rem;
+      top: 0%;
+      background-color: #ffffff9c;
+     }
+     @media screen and (max-width: 992px) {
       .address-section{
         grid-template-columns: repeat(1, 1fr);
         gap: 2rem;
+      }
+      .first-location-section .contact__addressBox::after{
+        display: none;
       }
      }
 </style>
@@ -109,9 +122,9 @@
     </div>
     
     <div class="address-section container-fluid grid">
-      <div class="first-location-section">
+      <div class="first-location-section" style="position: relative;">
         <div class="map-iframe">
-          <iframe style="border:0; width: 100%; height: 270px;" src="https://www.google.com/maps/embed?pb=!1m19!1m8!1m3!1d503151.017142787!2d76.524882!3d9.861497!3m2!1i1024!2i768!4f13.1!4m8!3e0!4m0!4m5!1s0x3b080d9bfaa6db61%3A0xa5df6acfc2d1e5fd!2sALTOS%20Technologies%2C%201st%20floor%2C%20Thapasaya%20Building%2C%20Infopark%2C%20Kakanad%2C%20Kochi%2C%20Kerala%20682042!3m2!1d10.0107422!2d76.36069859999999!5e0!3m2!1sen!2sin!4v1672377111826!5m2!1sen!2sin" frameborder="0" allowfullscreen></iframe>
+          <iframe style="border:0; width: 100%; height: 400px;" src="https://www.google.com/maps/embed?pb=!1m19!1m8!1m3!1d503151.017142787!2d76.524882!3d9.861497!3m2!1i1024!2i768!4f13.1!4m8!3e0!4m0!4m5!1s0x3b080d9bfaa6db61%3A0xa5df6acfc2d1e5fd!2sALTOS%20Technologies%2C%201st%20floor%2C%20Thapasaya%20Building%2C%20Infopark%2C%20Kakanad%2C%20Kochi%2C%20Kerala%20682042!3m2!1d10.0107422!2d76.36069859999999!5e0!3m2!1sen!2sin!4v1672377111826!5m2!1sen!2sin" frameborder="0" allowfullscreen></iframe>
         </div>
         
         <div class="contact__addressBox container flex ">
@@ -133,7 +146,7 @@
       </div>
       <div class="second-location-section">
         <div class="map-iframe">
-          <iframe style="border:0; width: 100%; height: 270px;" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3887.72271907129!2d80.24602337468745!3d12.989578514484595!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a525d6202e54fb9%3A0xcf5fc0aac9108c7e!2sTIDEL%20Park%2C%20Rajiv%20Gandhi%20IT%20Expy%2C%20Tharamani%2C%20Chennai%2C%20Tamil%20Nadu%20600113!5e0!3m2!1sen!2sin!4v1692775999496!5m2!1sen!2sin"  frameborder="0" allowfullscreen loading="lazy" ></iframe>
+          <iframe style="border:0; width: 100%; height: 400px;" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3887.72271907129!2d80.24602337468745!3d12.989578514484595!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a525d6202e54fb9%3A0xcf5fc0aac9108c7e!2sTIDEL%20Park%2C%20Rajiv%20Gandhi%20IT%20Expy%2C%20Tharamani%2C%20Chennai%2C%20Tamil%20Nadu%20600113!5e0!3m2!1sen!2sin!4v1692775999496!5m2!1sen!2sin"  frameborder="0" allowfullscreen loading="lazy" ></iframe>
         </div>
   
         <div class="contact__addressBox container flex ">
